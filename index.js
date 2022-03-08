@@ -4,13 +4,18 @@ let precoMaca = 10;
 
 let precoBanana = 20;
 
+let precoOvo= 35;
+
 let qtdMaca = 0;
 
 let qtdBanana = 0;
 
+let qtdOvo = 0;
+
 let precoUpgrade = 100;
 
 let qtdUpgrade = 1;
+
 
 function recarregar(){
     document.getElementById('contador').innerHTML ="Moedas: " + contador  
@@ -74,6 +79,18 @@ function upgrade(){
         semDinheiro();
     }
 }
+
+function ovo(){
+    if(validarDinheiro(contador,precoOvo)){
+        contador = contador - precoOvo
+        qtdOvo ++;
+
+        implementarMoedas(4,1000);
+        recarregar();
+    }else{
+        semDinheiro();
+    }
+};
 
 setInterval(() => {
     recarregar() 
